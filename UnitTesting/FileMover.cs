@@ -34,11 +34,8 @@ namespace UnitTesting
             string completeSourceURL = Path.Combine(source, _testFile);
             string completeTargetURL = Path.Combine(target, _testFile);
 
-            if (File.Exists(completeTargetURL))
-                File.Delete(completeTargetURL);
-
-            
-            File.Move(completeSourceURL, completeTargetURL);
+            if (File.Exists(completeTargetURL))           
+                File.Move(completeSourceURL, completeTargetURL);
 
             Assert.IsTrue(File.Exists(completeTargetURL));
         }
